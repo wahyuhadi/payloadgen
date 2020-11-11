@@ -23,7 +23,7 @@ func main() {
 
 func readJava() {
 	flag.Parse()
-	data, err := ioutil.ReadFile("javapayload.file")
+	data, err := ioutil.ReadFile("DO_NOT_DELETE_THIS_FOLDER/javapayload.file")
 	if err != nil {
 		fmt.Println("File reading error", err)
 		return
