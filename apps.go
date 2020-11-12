@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"io/ioutil"
+	"os"
 	"strings"
 )
 
@@ -40,6 +41,10 @@ func readJava() {
 
 func readNode() {
 	flag.Parse()
+	if *ip == "" {
+		fmt.Println("--ip cannot empty")
+		os.Exit(1)
+	}
 	data, err := ioutil.ReadFile("DO_NOT_DELETE_THIS_FOLDER/nodejs.file")
 	if err != nil {
 		fmt.Println("File reading error", err)
