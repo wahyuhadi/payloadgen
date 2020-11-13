@@ -29,6 +29,10 @@ func main() {
 
 func readJava() {
 	flag.Parse()
+	if *command == "" {
+		fmt.Println("Java payload need command like , curl 100.100.100.1:443")
+		os.Exit(1)
+	}
 	data, err := ioutil.ReadFile("DO_NOT_DELETE_THIS_FOLDER/javapayload.file")
 	if err != nil {
 		fmt.Println("File reading error", err)
